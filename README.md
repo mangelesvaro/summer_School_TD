@@ -7,6 +7,8 @@ RStudio Cloud es una versión en la nube del entorno de desarollo integrado para
 
 RStudio Desktop es una aplicación de escritorio independiente de código abierto, que incluye una consola, un editor de sintaxis de lenguaje R, que admite ejecución directa de código, así como herramientas para gráficos y gestión del espacio del trabajo. Trabaja con la versión de R que tengas instalada en tu estación de trabajo local de Windows, Mac OS X o Linux.  
 
+![](./Auxiliares/RStudio.png) 
+
 En los últimos tiempos, las nubes públicas han experimentado un rápido crecimiento a medida que las empresas se esfuerzan por virtualizar la mayor cantidad posible de sus operaciones, incluido el almacenamiento y análisis de datos. Lo más probable es que esta tendencia continue.
 
 ### 1.1. Instalar R y RStudio Desktop en local
@@ -14,6 +16,8 @@ En los últimos tiempos, las nubes públicas han experimentado un rápido crecim
 #### 1.1.1. Instalar R
 
 Para poder ejecutar códigos de R, primero es necesario instalar el software R que el sistema operativo de tu máquina necesite.
+
+![](./Auxiliares/Rdownload.png) 
 
 [Enlace de descarga](https://cran.r-project.org/bin/windows/base/)
 
@@ -33,8 +37,11 @@ Como base del ejercicio se estudiará el incendio acaecido entre los días 7 y 1
 
 ### 2.1. Registro en la plataforma Earth Explorer del USGS
 Un requisito indispensable para la descarga de datos remotes en el registro en el portal de [Earth Explorer](https://earthexplorer.usgs.gov). Aunque en [este video](https://www.youtube.com/watch?v=eAmTxsg6ZYE) que os se ha colgado en la plataforma se explica cómo hacerlo, os dejamos unas indicaciones que esperamos os sirvan de ayuda. 
+
 Al abrir el portal, la página tendrá un aspecto parecido a éste:  
-![](C:/MOOC_TD/Earth_Explorer_.JPG)  
+
+![](./Auxiliares/Earth_Explorer_.JPG)  
+
 Presionando en **login** en la esquina superir derecha, se accede a la pantalla del sistema de registro EROS, donde es necesario indicar que queremos crear una nueva cuenta (**Create New Account**).  
 
 ### 2.2. Búsqueda y selección de las imágenes
@@ -93,6 +100,8 @@ login_USGS(username = "xxxxxx")
 
 Posteriormente, se introducirá la contraseña asociada en la ventana emergente. 
 
+![](./Auxiliares/Password_.JPG) 
+
 ```{r}
 # Productos de imágenes satelitales disponibles a través de getSpatialData
 get_products()
@@ -140,7 +149,7 @@ Para decidir cuál representa mejor el momento anterior al incendio, es aconseja
 
 ```{r}
 # Establacer el direcorio de descarga
-set_archive("C:/MOOC_TD/TALLER")
+set_archive("C:/DESCARGA")
 
 # Descarga de las vistas previas georreferenciadas de las imágenes
 imagenes <- get_previews(imagenes) 
