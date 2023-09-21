@@ -196,7 +196,7 @@ View(imagenes)
 
 ```{r}
 # Establacer el direcorio de descarga
-set_archive("C:/MOOC_TD/TALLER")
+set_archive("C:/DESCARGA")
 
 # Descarga de las vistas previas georreferenciadas de las imágenes
 imagenes <- get_previews(imagenes) 
