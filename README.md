@@ -3,6 +3,8 @@
 
 RStudio Cloud es una versión en la nube del entorno de desarollo integrado para R y RStudio que no necesita instalación. RStudio Cloud se creó con el objetivo de facilitar a los profesionales y estudiantes la práctica, el intercambio y el aprendizaje de la ciencia de datos.  
 
+![](.Auxiliares/R_Studio_Cloud.png)
+
 RStudio Desktop es una aplicación de escritorio independiente de código abierto, que incluye una consola, un editor de sintaxis de lenguaje R, que admite ejecución directa de código, así como herramientas para gráficos y gestión del espacio del trabajo. Trabaja con la versión de R que tengas instalada en tu estación de trabajo local de Windows, Mac OS X o Linux.  
 
 En los últimos tiempos, las nubes públicas han experimentado un rápido crecimiento a medida que las empresas se esfuerzan por virtualizar la mayor cantidad posible de sus operaciones, incluido el almacenamiento y análisis de datos. Lo más probable es que esta tendencia continue.
