@@ -116,6 +116,8 @@ Se puede comprobar que a través de este sistema se puede acceder a diversos pro
 
 Para entender a qué conjunto de datos se refiere cada producto:  
 
+![](./Auxiliares/Landsat_datasets.JPG) 
+
 [Fuente](https://grass.osgeo.org/grass78/manuals/addons/i.landsat.download.html) 
 
 Ahora se procede a la búsqueda concreta de las imágenes. Se va a emplear el producto **landsat_tm_c2_l2** que se refiere a los datos procedentes de Landsat 5 TM, satélite operativo en el periodo en el que ocurrió el incendio, con nivel de procesamiento 2. Puesto que el siniestro ocurrió en el mes de agosto, es razonable pensar que una imagen de primavera del mismo año podría generar el contraste necesario para el análisis del suceso.  Es por ello que se va a emplear el mes de marzo como rango de búsqueda temporal.
