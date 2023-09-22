@@ -1,1 +1,1 @@
-<iframe src="AOI.html" height="500" width="500"></iframe>
+ <embed type="text/html" src="https://github.com/Libro-GEOFOREST/Capitulo7-Sensores_Teledeteccion/blob/main/AOI.htm" width="500" height="500"> 
