@@ -36,7 +36,7 @@ Por otro lado, existen numerosas fuentes de datos públicos que nos permiten obt
 Como base del ejercicio se estudiará el incendio acaecido entre los días 7 y 10 de agosto de 1993 en la provincia de Granada, afectando a unas 7.000 ha, de las cuales unas 250 ha estaban localizadas en el interior del Parque Natural de la Sierra de Huétor. En ella se quemaron repoblaciones de Pinus pinaster, Pinus halepensis, Pinus laricio y en menor medida con Pinus sylvestris y Populus realizadas en la década de los años 40 del siglo pasado. Tras el incendio, han sido escasas las labores de reforestación desarrolladas en la zona. La más significativa se ejecutó a finales de 1996 y consistió en una siembra aérea de 16 especies de pinos y matorral con muy bajos resultados.  
 
 ### 2.1. Registro en la plataforma Earth Explorer del USGS
-Un requisito indispensable para la descarga de datos remotes en el registro en el portal de [Earth Explorer](https://earthexplorer.usgs.gov). Aunque en [este video](https://www.youtube.com/watch?v=eAmTxsg6ZYE) que os se ha colgado en la plataforma se explica cómo hacerlo, os dejamos unas indicaciones que esperamos os sirvan de ayuda. 
+Un requisito indispensable para la descarga de datos remotes en el registro en el portal de [Earth Explorer](https://earthexplorer.usgs.gov). Aunque en [este video](https://www.youtube.com/watch?v=eAmTxsg6ZYE) se explica cómo hacerlo, os dejamos unas indicaciones que esperamos os sirvan de ayuda. 
 
 Al abrir el portal, la página tendrá un aspecto parecido a éste:  
 
@@ -52,7 +52,7 @@ Para hacer un estudio completo del incendio mediante teledetección es recomenda
 
 #### 2.2.1 Antes del incendio
 
-Primero, es preciso subir a la nube la capa con los límites de la zona de estudio que se han facilitado a través de la plataforma del curso con el nombre de Limites_AOI. Aunque el archivo está comprimido en formato zip, se deben subir los 4 archivos individuales que describen la capa, los archivos tienen las siguientes extensiones .dbf, .prj, .shp, .shx. Ésto se realiza a través del botón **upload** de la pestaña **Files** en el cuadro inferior derecho. Una vez realizado, se verá así:  
+Primero, es preciso subir a la nube la capa con los límites de la zona de estudio que se han facilitado a través de la plataforma con el nombre de Limites_AOI. Aunque el archivo está comprimido en formato zip, se deben subir los 4 archivos individuales que describen la capa, los archivos tienen las siguientes extensiones .dbf, .prj, .shp, .shx. Ésto se realiza a través del botón **upload** de la pestaña **Files** en el cuadro inferior derecho. Una vez realizado, se verá así:  
 ![](.Auxiliares/Upload.JPG) 
 
 Seguidamente, se configura la plataforma para las funciones que se van a emplear.  
@@ -95,7 +95,7 @@ view_aoi()
 
 A partir de este punto, es necesario logarse dentro de la plataforma EarthExplorer con las credenciales obtenidas en el paso anterior para poder realizar la búsqueda de imágenes. El valor **"xxxxxx"** es necesario sustituirlo por nuestro usuario.
 
-```{r  }
+```r
 # Login en la plataforma USGS
 login_USGS(username = "xxxxxx")
 ```
@@ -298,7 +298,7 @@ Por otro lado, se proporcionan archivos GeoTIFF adicionales conn información m�
 - LT05_L2SP_200034_19930329_20200914_02_T1_thumb_large.jpeg: Visualización rápida de la imagen en tamaño grande  
 - LT05_L2SP_200034_19930329_20200914_02_T1_thumb_small.jpeg: Visualización rápida de la imagen en tamaño pequeño  
 
-Se puede profundizar aún más con [la guía de los porductos Landsat 4-7 de la colección 2, nivel 2](https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/atoms/files/LSDS-1618_Landsat-4-7_Collection2_Level-2-Science-Product_Guide-v4.pdf). 
+Se puede profundizar aún más con [la guía de los porductos Landsat 4-7 de la colección 2, nivel 2](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/LSDS-1618_Landsat-4-7_C2-L2-ScienceProductGuide-v4.pdf). 
 
 Se procede a leer la imagen en cada una de las bandas. Primero se activa la librería necesaria. 
 
