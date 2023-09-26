@@ -57,7 +57,7 @@ Primero, es preciso subir a la nube la capa con los límites de la zona de estud
 
 Seguidamente, se configura la plataforma para las funciones que se van a emplear.  
 
-```{r eval=FALSE }
+```r 
 # Instalación del paquete sf (simple features) que permite el acceso a datos geograficos
 #install.packages("sf")
 # Activación del paquete una vez descargado
@@ -78,7 +78,7 @@ getSpatialData se encuentra en una etapa inicial de desarrollo. Tiene como objet
 A continuación, se introduce la zona de estudio, se define como los límites de la zona de interés para la búsqueda de imágenes y, finalmente, se visualiza sobre un mapa interactivo:  
 
 
-```{r}
+```r
 #Leer los límites de la zona de estudio donde se produjo el incendio
 library(sf)
 Limites.AOI<-st_read("E:/MOOC_TD/Limites_AOI.shp")
@@ -104,7 +104,7 @@ Posteriormente, se introducirá la contraseña asociada en la ventana emergente.
 
 ![](./Auxiliares/Password_.JPG) 
 
-```{r}
+```r
 # Productos de imágenes satelitales disponibles a través de getSpatialData
 get_products()
 
@@ -122,7 +122,7 @@ Para entender a qué conjunto de datos se refiere cada producto:
 
 Ahora se procede a la búsqueda concreta de las imágenes. Se va a emplear el producto **landsat_tm_c2_l2** que se refiere a los datos procedentes de Landsat 5 TM, satélite operativo en el periodo en el que ocurrió el incendio, con nivel de procesamiento 2. Puesto que el siniestro ocurrió en el mes de agosto, es razonable pensar que una imagen de primavera del mismo año podría generar el contraste necesario para el análisis del suceso.  Es por ello que se va a emplear el mes de marzo como rango de búsqueda temporal.
 
-```{r}
+```r
 # Búsqueda de las imágenes
 imagenes <- getLandsat_records(time_range = c("1993-03-01", "1993-04-01"), 
                                products = "landsat_tm_c2_l2")
@@ -130,7 +130,7 @@ imagenes <- getLandsat_records(time_range = c("1993-03-01", "1993-04-01"),
 
 En la esquina superior derecha del proyecto de RStudio, en la pestaña **Environment** se habrá generado una veriable de datos llamada **busqueda** con 18 observaciones y 20 variables. Se puede visualizar con el siguiente comando:  
 
-```{r}
+```r
 # Visualizar resultados de la búsqueda
 View(imagenes)
 ```
@@ -139,7 +139,7 @@ La tabla con los resultados de la búsqueda continene en nombre de las imágenes
 
 Seguidamente, se van a filtrar los resultados por los que se refieren a nivel **l1**.
 
-```{r}
+```r
 # Filtrado de resultados por los correspondientes al nivel "l1"
 imagenes <- imagenes[imagenes$level == "l1",]
 
@@ -151,7 +151,7 @@ Tan sólo encontramos 2 imágenes con dichas características con fecha de adqui
 
 Para decidir cuál representa mejor el momento anterior al incendio, es aconsejable  visualizar las vistas previas:  
 
-```{r}
+```r
 # Establacer el direcorio de descarga
 set_archive("C:/DESCARGA")
 
@@ -169,7 +169,7 @@ Al comparar ambas previsualizaciones, queda claro que la segunda imagen es la qu
 
 Finalmente, se pasa a obtener el enlace de descarga de la imagen seleccionada y se adquiere la imagen.
 
-```{r eval=FALSE}
+```r
 # Enlace de descarga
 url_<-paste0("https://landsatlook.usgs.gov/bundle/",
              (imagenes$record_id[2]),".tar")
@@ -183,14 +183,14 @@ browseURL(url_)
 
 Se repite el proceso buscando ahora la descarga de la imagen Landsat posterior al incendio más adecuada para el análisis de los datos. Se va a utilizar una extensión temporal mayor en la búsqueda puesto que la estación otoñal podría causar un aumento en la nubosidad de la zona de estudio.
 
-```{r}
+```r
 # Búsqueda de las imágenes
 imagenes <- getLandsat_records(time_range = c("1993-09-01", "1993-10-30"), 
                                products = "landsat_tm_c2_l2")
 ```
 
 
-```{r}
+```r
 # Filtrado de resultados por los correspondientes al nivel "l1"
 imagenes <- imagenes[imagenes$level == "l1",]
 
@@ -198,7 +198,7 @@ imagenes <- imagenes[imagenes$level == "l1",]
 View(imagenes)
 ```
 
-```{r}
+```r
 # Establacer el direcorio de descarga
 set_archive("C:/DESCARGA")
 
