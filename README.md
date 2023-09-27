@@ -91,7 +91,7 @@ set_aoi(Limites.AOI$geometry)
 view_aoi()
 ```
 
-[](AOI.html)
+![](AOI.html)
 
 A partir de este punto, es necesario logarse dentro de la plataforma EarthExplorer con las credenciales obtenidas en el paso anterior para poder realizar la búsqueda de imágenes. El valor **"xxxxxx"** es necesario sustituirlo por nuestro usuario.
 
