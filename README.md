@@ -109,9 +109,90 @@ Posteriormente, se introducirá la contraseña asociada en la ventana emergente.
 ```r
 # Productos de imágenes satelitales disponibles a través de getSpatialData
 get_products()
+```
 
+```r annotate
+##   [1] "sentinel-1"            "sentinel-2"            "sentinel-3"           
+##   [4] "sentinel-5p"           "sentinel-1_gnss"       "sentinel-2_gnss"      
+##   [7] "sentinel-3_gnss"       "landsat_8_c1"          "lsr_landsat_8_c1"     
+##  [10] "landsat_ot_c2_l1"      "landsat_ot_c2_l2"      "landsat_etm_c1"       
+##  [13] "lsr_landsat_etm_c1"    "landsat_etm_c2_l1"     "landsat_etm_c2_l2"    
+##  [16] "landsat_tm_c1"         "lsr_landsat_tm_c1"     "landsat_tm_c2_l1"     
+##  [19] "landsat_tm_c2_l2"      "landsat_mss_c1"        "landsat_mss_c2_l1"    
+##  [22] "modis_mcd64a1_v6"      "modis_mod09a1_v6"      "modis_mod09cmg_v6"    
+##  [25] "modis_mod14_v6"        "modis_mod09ga_v6"      "modis_mod14a1_v6"     
+##  [28] "modis_mod09gq_v6"      "modis_mod14a2_v6"      "emodis_global_lst_v6" 
+##  [31] "modis_mod09q1_v6"      "modis_modocga_v6"      "modis_myd14_v6"       
+##  [34] "emodis"                "modis_modtbga_v6"      "modis_myd14a1_v6"     
+##  [37] "emodis_ndvi_v6"        "modis_myd09a1_v6"      "modis_myd14a2_v6"     
+##  [40] "emodis_phen_metrics"   "modis_myd09cmg_v6"     "modis_myd09ga_v6"     
+##  [43] "modis_myd09gq_v6"      "modis_myd09q1_v6"      "modis_mydocga_v6"     
+##  [46] "modis_mydtbga_v6"      "lpcs_modis_mcd12q1"    "lpcs_modis_mcd43a3"   
+##  [49] "lpcs_modis_mod09a1"    "lpcs_modis_mod09ga"    "lpcs_modis_mod09gq"   
+##  [52] "lpcs_modis_mod09q1"    "lpcs_modis_mod11a1"    "lpcs_modis_mod13a1"   
+##  [55] "lpcs_modis_mod13a2"    "lpcs_modis_mod13a3"    "lpcs_modis_mod13q1"   
+##  [58] "lpcs_modis_myd09a1"    "lpcs_modis_myd09ga"    "lpcs_modis_myd09gq"   
+##  [61] "lpcs_modis_myd09q1"    "lpcs_modis_myd11a1"    "lpcs_modis_myd13a1"   
+##  [64] "lpcs_modis_myd13a2"    "lpcs_modis_myd13a3"    "lpcs_modis_myd13q1"   
+##  [67] "modis_mcd12c1_v6"      "modis_mcd12q1_v6"      "modis_mcd12q2_v6"     
+##  [70] "modis_mcd15a2h_v6"     "modis_mcd15a3h_v6"     "modis_mcd19a1_v6"     
+##  [73] "modis_mcd19a2_v6"      "modis_mcd19a3_v6"      "modis_mcd43a1_v6"     
+##  [76] "modis_mcd43a2_v6"      "modis_mcd43a3_v6"      "modis_mcd43a4_v6"     
+##  [79] "modis_mcd43c1_v6"      "modis_mcd43c2_v6"      "modis_mcd43c3_v6"     
+##  [82] "modis_mcd43c4_v6"      "modis_mcd43d01_v6"     "modis_mcd43d02_v6"    
+##  [85] "modis_mcd43d03_v6"     "modis_mcd43d04_v6"     "modis_mcd43d05_v6"    
+##  [88] "modis_mcd43d06_v6"     "modis_mcd43d07_v6"     "modis_mcd43d08_v6"    
+##  [91] "modis_mcd43d09_v6"     "modis_mcd43d10_v6"     "modis_mcd43d11_v6"    
+##  [94] "modis_mcd43d12_v6"     "modis_mcd43d13_v6"     "modis_mcd43d14_v6"    
+##  [97] "modis_mcd43d15_v6"     "modis_mcd43d16_v6"     "modis_mcd43d17_v6"    
+## [100] "modis_mcd43d18_v6"     "modis_mcd43d19_v6"     "modis_mcd43d20_v6"    
+## [103] "modis_mcd43d21_v6"     "modis_mcd43d22_v6"     "modis_mcd43d23_v6"    
+## [106] "modis_mcd43d24_v6"     "modis_mcd43d25_v6"     "modis_mcd43d26_v6"    
+## [109] "modis_mcd43d27_v6"     "modis_mcd43d28_v6"     "modis_mcd43d29_v6"    
+## [112] "modis_mcd43d30_v6"     "modis_mcd43d31_v6"     "modis_mcd43d32_v6"    
+## [115] "modis_mcd43d33_v6"     "modis_mcd43d34_v6"     "modis_mcd43d35_v6"    
+## [118] "modis_mcd43d36_v6"     "modis_mcd43d37_v6"     "modis_mcd43d38_v6"    
+## [121] "modis_mcd43d39_v6"     "modis_mcd43d40_v6"     "modis_mcd43d41_v6"    
+## [124] "modis_mcd43d42_v6"     "modis_mcd43d43_v6"     "modis_mcd43d44_v6"    
+## [127] "modis_mcd43d45_v6"     "modis_mcd43d46_v6"     "modis_mcd43d47_v6"    
+## [130] "modis_mcd43d48_v6"     "modis_mcd43d49_v6"     "modis_mcd43d50_v6"    
+## [133] "modis_mcd43d51_v6"     "modis_mcd43d52_v6"     "modis_mcd43d53_v6"    
+## [136] "modis_mcd43d54_v6"     "modis_mcd43d55_v6"     "modis_mcd43d56_v6"    
+## [139] "modis_mcd43d57_v6"     "modis_mcd43d58_v6"     "modis_mcd43d59_v6"    
+## [142] "modis_mcd43d60_v6"     "modis_mcd43d61_v6"     "modis_mcd43d62_v6"    
+## [145] "modis_mcd43d63_v6"     "modis_mcd43d64_v6"     "modis_mcd43d65_v6"    
+## [148] "modis_mcd43d66_v6"     "modis_mcd43d67_v6"     "modis_mcd43d68_v6"    
+## [151] "modis_mod11a1_v6"      "modis_mod11a2_v6"      "modis_mod11b1_v6"     
+## [154] "modis_mod11b2_v6"      "modis_mod11b3_v6"      "modis_mod11c1_v6"     
+## [157] "modis_mod11c2_v6"      "modis_mod11c3_v6"      "modis_mod11_l2_v6"    
+## [160] "modis_mod13a1_v6"      "modis_mod13a2_v6"      "modis_mod13a3_v6"     
+## [163] "modis_mod13c1_v6"      "modis_mod13c2_v6"      "modis_mod13q1_v6"     
+## [166] "modis_mod15a2h_v6"     "modis_mod16a2_v6"      "modis_mod17a2h_v6"    
+## [169] "modis_mod44b_v6"       "modis_mod44w_v6"       "modis_myd11a1_v6"     
+## [172] "modis_myd11a2_v6"      "modis_myd11b1_v6"      "modis_myd11b2_v6"     
+## [175] "modis_myd11b3_v6"      "modis_myd11c1_v6"      "modis_myd11c2_v6"     
+## [178] "modis_myd11c3_v6"      "modis_myd11_l2_v6"     "modis_myd13a1_v6"     
+## [181] "modis_myd13a2_v6"      "modis_myd13a3_v6"      "modis_myd13c1_v6"     
+## [184] "modis_myd13c2_v6"      "modis_myd13q1_v6"      "modis_myd15a2h_v6"    
+## [187] "modis_myd16a2_v6"      "modis_myd17a2h_v6"     "modis_myd21a1d_v6"    
+## [190] "modis_myd21a1n_v6"     "modis_myd21a2_v6"      "modis_myd21_v6"       
+## [193] "srtm_global_3arc_v003" "srtm_global_1arc_v001"
+```
+
+```r
 # Centrándonos en los productos de Landsat
 getLandsat_products()
+```
+
+```r annotate
+##  [1] "landsat_8_c1"              "lsr_landsat_8_c1"         
+##  [3] "landsat_ot_c2_l1"          "landsat_ot_c2_l2"         
+##  [5] "landsat_etm_c1"            "lsr_landsat_etm_c1"       
+##  [7] "landsat_etm_c2_l1"         "landsat_etm_c2_l2"        
+##  [9] "landsat_tm_c1"             "lsr_landsat_tm_c1"        
+## [11] "landsat_tm_c2_l1"          "landsat_tm_c2_l2"         
+## [13] "landsat_mss_c1"            "landsat_mss_c2_l1"        
+## [15] "landsat_ard_tile_c2"       "landsat_ard_tile_files_c2"
 ```
 
 Se puede comprobar que a través de este sistema se puede acceder a diversos productos de satélites como Sentinel-1, Sentinel-2, Sentinel-3, Sentinel-5P, Landsat 8 OLI, Landsat ETM, Landsat TM, Landsat MSS, MODIS (Terra & Aqua) y SRTM DEM.  
@@ -128,6 +209,11 @@ Ahora se procede a la búsqueda concreta de las imágenes. Se va a emplear el pr
 # Búsqueda de las imágenes
 imagenes <- getLandsat_records(time_range = c("1993-03-01", "1993-04-01"), 
                                products = "landsat_tm_c2_l2")
+```
+
+```r annotate
+## Searching records for product name 'landsat_tm_c2_l2'...
+## Found a total of 20 records.
 ```
 
 En la esquina superior derecha del proyecto de RStudio, en la pestaña **Environment** se habrá generado una veriable de datos llamada **busqueda** con 18 observaciones y 20 variables. Se puede visualizar con el siguiente comando:  
