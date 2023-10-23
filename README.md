@@ -1,5 +1,7 @@
 [![DOI](https://zenodo.org/badge/694532533.svg)](https://zenodo.org/badge/latestdoi/694532533)
 
+Mª Ángeles Varo Martínez y Rafael Mª Navarro Cerrillo
+
 # Capitulo7-Sensores_Teledeteccion
 ## 1. DESCARGAR R Y RSTUDIO
 
