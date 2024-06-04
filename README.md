@@ -2,7 +2,7 @@
 
 Mª Ángeles Varo Martínez y Rafael Mª Navarro Cerrillo
 
-# Capitulo7-Sensores_Teledeteccion
+# Capitulo 5: Sensores, adquisición y procesado
 ## 1. DESCARGAR R Y RSTUDIO
 
 RStudio Cloud es una versión en la nube del entorno de desarollo integrado para R y RStudio que no necesita instalación. RStudio Cloud se creó con el objetivo de facilitar a los profesionales y estudiantes la práctica, el intercambio y el aprendizaje de la ciencia de datos.  
