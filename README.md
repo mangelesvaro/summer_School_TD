@@ -1,4 +1,4 @@
-# summer_school_TF
+# summer_school_TD
 
 [![DOI](https://zenodo.org/badge/694532533.svg)](https://zenodo.org/badge/latestdoi/694532533)
 
