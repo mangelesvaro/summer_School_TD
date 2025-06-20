@@ -449,7 +449,7 @@ b7<-crop(b7,extent(Limites.AOI))
 Observando la propiedad de **values** de las bandas de la imagen, puede verse que varía entre 0 y 65.535, es decir, está descrita en valores de 16 bits. Normalmente, los valores de reflectividad describen la fracción de radiación incidente que es reflejada por una superficie en valores de 0, cuando no refleja nada, a 1, cuando refleja toda la energía incidente. Para evitar que los valores decimales de la fracción saturen la capacidad de almacenamiento de la imagen, se utiliza un factor de escalado, que transforman los valores para que queden circunscritos en 16 bits. Para transformarlos a cantidades entre 0 y 1 se utiliza un factor de escala, cuya ecuación es:  
 $$Pixel[0-1] = (Pixel [0-65535]* 0.0000275) - 0.2$$
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Factor_de_escala.PNG) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Factor_de_escala.PNG) 
 [Fuente](https://www.usgs.gov/faqs/why-are-fill-values-and-scaling-factors-landsat-collection-2-level-2-products-different-those?qt-news_science_products=0#qt-news_science_products)  
 
 Ejecutamos, por tanto, la transformación de los datos a valores de reflectividad usando el factor de escala proporcionado.  
@@ -492,37 +492,37 @@ par(mfrow=c(1,1))
 plot(b1, main = "Azul",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_azul.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_azul.png) 
 
 ```r
 plot(b2, main = "Verde",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_verde.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_verde.png) 
 
 ```r
 plot(b3, main = "Rojo", col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_rojo.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_rojo.png) 
 
 ```r
 plot(b4, main = "Infrarrojo cercano 1",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_nir1.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_nir1.png) 
 
 ```r
 plot(b5, main = "Infrarrojo cercano 2", col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_nir2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_nir2.png) 
 
 ```r
 plot(b7, main = "Infrarrojo lejano",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_fir.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_fir.png) 
 
 Ahora se puede vislumbrar qué ha pasado con los valores por encima de 1 del histograma. Parece que las zonas nevadas han saturado el sensor, por lo que ha quedado reflejado con valores de reflectancia anormalmente altos. Se puede solucionar limitando los valores digitales de los píxeles a 1.  
 
@@ -586,13 +586,13 @@ par(mfrow=c(1,1))
 plotRGB(Color_real,scale=1)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_color_natural.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_color_natural.png) 
 
 Esta combinación de bandas se conoce como **color natural**. En ella se utilizan las bandas pertenecientes a la parte visible del espectro electromagnetico. Por eso, la apariancia del terreno es similar al  sistema visual humano: la vegetación saludable es verde, la vegetación no saludable es marrón y amarilla, las carreteras son grises o verde oscuro y las costas son de color blanco. Esta combinación de bandas proporciona la mayor penetración de agua y una información batimétrica y de sedimentos superior. También se utiliza para estudios urbanos. Las nubes y la nieve aparecen blancas y son difíciles de distinguir.  
 
 En algunas ocasiones, se puede mejorar la visualización de la imagen mediante un ajuste del histograma o **stretch**. Consiste en estirar el histograma de valores de la imagen para alcanzar todo el rango de valores de visualización. Es decir, si la escala de valores de visualización varía entre 0 y 1, pero el rango de valores de una banda lo hace entre 0.01 y 0.45, se **estira** el histograma para que ocupe todo el rango entre 0 y 1. La forma de hacerlo puede ser lineal (**lin**), aplicando una transformación de los valores de manera uniforme desde el mínimo al máximo y mejorando el contraste en la imagen con áreas de tonos claros que aparecen más claras y áreas oscuras que aparecen más oscuras, lo que hace que la interpretación visual sea mucho más fácil.  
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/linstre.gif)  
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/linstre.gif)  
 [Fuente](https://www.nrcan.gc.ca/maps-tools-and-publications/satellite-imagery-and-air-photos/tutorial-fundamentals-remote-sensing/image-interpretation-analysis/image-enhancement/9389)
 
 ```r
@@ -600,11 +600,11 @@ En algunas ocasiones, se puede mejorar la visualización de la imagen mediante u
 plotRGB(Color_real,scale=1,stretch='lin')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_color_natural_hist_lineal.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_color_natural_hist_lineal.png) 
 
 O bien, siguiendo una ecualización del histograma (**hist**), en el que el estiramiento asigna más valores de visualización a las partes del histograma que ocurren con mayor frecuencia, mejorando el detalle de la visualización de éstas áreas del histograma original frente a las otras zonas del histograma.  
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/equalste.gif)  
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/equalste.gif)  
 [Fuente](https://www.nrcan.gc.ca/maps-tools-and-publications/satellite-imagery-and-air-photos/tutorial-fundamentals-remote-sensing/image-interpretation-analysis/image-enhancement/9389)  
 
 ```r
@@ -612,7 +612,7 @@ O bien, siguiendo una ecualización del histograma (**hist**), en el que el esti
 plotRGB(Color_real,scale=1,stretch='hist')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_color_natural_hist_ecual.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_color_natural_hist_ecual.png) 
 
 Otra forma de visualizar los datos puede ser usando la combinación de bandas 4-3-1:  
 
@@ -624,7 +624,7 @@ Falso_color<-stack(b4,b3,b2)
 plotRGB(Falso_color,scale=1)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_falso_color.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_falso_color.png) 
 
 ```r
 #Visualización de la imagen en falso color con ajuste del histograma lineal
@@ -638,7 +638,7 @@ plotRGB(Falso_color,scale=1,stretch='lin')
 plotRGB(Falso_color,scale=1,stretch='hist')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_color_natural_hist_ecual.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_color_natural_hist_ecual.png) 
 
 Esta otra combinación de bandas se conoce como **falso color**. La vegetación aparece en tonos de rojo, las áreas urbanas son de color azul cian y los suelos varían de marrón oscuro a marrón claro. El hielo, la nieve y las nubes son de color blanco o cian claro. Los árboles de coníferas aparecerán de un rojo más oscuro que las de frondosas. Ésta es una combinación de bandas muy popular y es útil para estudios de vegetación, monitoreo de patrones de drenaje y suelo y varias etapas de crecimiento de cultivos. Generalmente, los tonos rojo intenso indican hojas anchas y/o vegetación más saludable, mientras que los rojos más claros significan pastizales o áreas con poca vegetación. Las áreas urbanas densamente pobladas se muestran en azul claro.   
 
@@ -684,7 +684,7 @@ Y, posteriormente, se buscan combinaciones de bandas que realcen determinadas ca
 plotRGB(img_preincendio, r=6,g=5,b=3,scale=1,stretch='lin')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_color_6_5_3.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_color_6_5_3.png) 
 
 Haciendo zoom sobre una extensión de la zona de estudio, se vería así: 
 
@@ -694,7 +694,7 @@ plotRGB(img_preincendio, r=6,g=5,b=3,scale=1,stretch='lin',
         ext=extent(c(483500,490000,4125000,4130000)))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_color_6_5_3_zoom.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_color_6_5_3_zoom.png) 
 
 Esta combinación de bandas incluye información sobre la cantidad de partículas en la atmósfera, humo o neblina. Además se puede interpretar la presencia de vegetación sana en tonos de verde oscuro y claro durante la temporada de crecimiento, las zonas urbanas son blancas, grises, cian o moradas, las arenas, los suelos y los minerales aparecen en colores brillantes. La absorción casi completa de las bandas de infrarrojos medios en el agua, el hielo y la nieve proporciona líneas costeras bien definidas y fuentes de agua destacadas dentro de la imagen. La nieve y el hielo aparecen como azul oscuro, el agua es negra o azul oscuro. Las superficies calientes como los incendios forestales y las calderas de los volcanes saturan las bandas del IR medio y aparecen en tonos de rojo o amarillo. Una aplicación particular de esta combinación es el monitoreo de incendios forestales.  
 
@@ -754,7 +754,7 @@ hist(b5,main = "Banda 5",breaks=200,xlab = "Valor del pixel")
 hist(b7,main = "Banda 7",breaks=200,xlab = "Valor del pixel")
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_histogramas.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_histogramas.png) 
 
 ```r
 #Visualización
@@ -762,37 +762,37 @@ par(mfrow=c(1,1))
 plot(b1, main = "Azul",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_azul.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_azul.png) 
 
 ```r
 plot(b2, main = "Verde",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_verde.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_verde.png) 
 
 ```r
 plot(b3, main = "Rojo", col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_rojo.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_rojo.png) 
 
 ```r
 plot(b4, main = "Infrarrojo cercano 1",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_nir1.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_nir1.png) 
 
 ```r
 plot(b5, main = "Infrarrojo cercano 2", col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_nir2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_nir2.png) 
 
 ```r
 plot(b7, main = "Infrarrojo lejano",col = grey.colors(255, start=0, end=1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_fir.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_fir.png) 
 
 ```r
 #Limitar los valores digitales de los píxeles de la imagen a 1
@@ -813,7 +813,7 @@ hist(b5,main = "Banda 5",breaks=200,xlab = "Valor del pixel")
 hist(b7,main = "Banda 7",breaks=200,xlab = "Valor del pixel")
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_histogramas2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_histogramas2.png) 
 
 ```r
 #Unión de bandas rojo-verde-azul en una sola imagen
@@ -843,21 +843,21 @@ par(mfrow=c(1,1))
 plotRGB(Color_real,scale=1)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_color_real.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_color_real.png) 
 
 ```r
 #Visualización con ajuste del histograma lineal
 plotRGB(Color_real,scale=1,stretch='lin')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_color_real_lineal.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_color_real_lineal.png) 
 
 ```r
 #Visualización con ajuste del histograma siguiendo una ecualización
 plotRGB(Color_real,scale=1,stretch='hist')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_color_real_ecual.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_color_real_ecual.png) 
 
 ```r
 #Unión de bandas infrarrojo-rojo-verde en una sola imagen
@@ -867,21 +867,21 @@ Falso_color<-stack(b4,b3,b2)
 plotRGB(Falso_color,scale=1)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_falso_color.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_falso_color.png) 
 
 ```r
 #Visualización de la imagen en falso color con ajuste del histograma lineal
 plotRGB(Falso_color,scale=1,stretch='lin')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_falso_color_lineal.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_falso_color_lineal.png) 
 
 ```r
 #Visualización de la imagen en falso color con ajuste del histograma siguiendo una ecualización
 plotRGB(Falso_color,scale=1,stretch='hist')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_falso_color_ecual.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_falso_color_ecual.png) 
 
 ```r
 #Unión de bandas espectrales de Landsat en una sola imagen
@@ -917,7 +917,7 @@ names(img_postincendio)
 plotRGB(img_postincendio, r=6,g=5,b=3,scale=1,stretch='lin')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_6_5_3.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_6_5_3.png) 
 
 ```r
 #Visualización de la imagen con la combinación de bandas 6-5-3 con zoom
@@ -925,7 +925,7 @@ plotRGB(img_postincendio, r=6,g=5,b=3,scale=1,stretch='lin',
         ext=extent(c(483500,490000,4125000,4130000)))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Post_6_5_3_zoom.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Post_6_5_3_zoom.png) 
 
 ```r
 #Guardar imagen postincendio
@@ -957,7 +957,7 @@ plot(sr[,c(1,2)], main = "Relaciones entre bandas")
 mtext("Azul vs Verde", side = 3, line = 0.5)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Relaciones_bandas_azul_verde.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Relaciones_bandas_azul_verde.png) 
 
 El gráfico revela que existen altas correlaciones entre las regiones de longitud de onda azul y verde, puesto que los valores de las bandas se sitúan en una línea, por tanto están aportando una información muy parecida de los objetos que describen en la imagen.  
 
@@ -978,7 +978,7 @@ plot(sr[,c(5,3)], main = "Relaciones entre bandas")
 mtext("NIR vs Rojo", side = 3, line = 0.5)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Relaciones_bandas_NIR_rojo.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Relaciones_bandas_NIR_rojo.png) 
 
 Sin embargo, cuando se enfrentan los valores de las bandas del infrarrojo cercano y de rojo, se puede observar una dispersión mayor de los datos. 
 
@@ -1027,7 +1027,7 @@ Como se puede observar, hereda casi todas las características de las bandas de 
 hist(NDVI_pre)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_hist_NDVI.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_hist_NDVI.png) 
 
 Su visualización quedaría así:  
 
@@ -1036,7 +1036,7 @@ Su visualización quedaría así:
 plot(NDVI_pre)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_NDVI.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_NDVI.png) 
 
 Normalmente, los píxeles en zonas con vegetación sana o densa reflejan más luz Infrarroja, lo que da como resultado valores altos de NDVI. Los píxeles en zonas con vegetación enferma o donde no hay vegetación absorben más luz Infrarroja, lo que da como resultado valores NDVI bajos o negativos. Según su valor NDVI, se puede identificar la vegetación en una región como vegetación densa, vegetación moderada, vegetación escasa o sin vegetación. El rango de valores NDVI que se suele emplear para cada tipo de situación:
 
@@ -1057,7 +1057,7 @@ plot(tipos.veg,col = rev(terrain.colors(4)),
      main = 'NDVI umbralizado')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_NDVI_umbralizado.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_NDVI_umbralizado.png) 
 
 ```r
 #Gráfico de distribución de tipos de vegetación
@@ -1070,7 +1070,7 @@ barplot(tipos.veg,
                       "Vegetación \n densa \n o sana"))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_NDVI_barplots.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_NDVI_barplots.png) 
 
 #### 3.2 Construcción del índice NBR  
 
@@ -1104,7 +1104,7 @@ plot(NBR_pre,
      axes = FALSE, box = FALSE)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_NBR.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_NBR.png) 
 
 #### 3.3 Guardar índices generados
 
@@ -1144,7 +1144,7 @@ Continuando con lo visto anteriormente, en este ejercicio se seguirá explorando
 
 Para empezar, es preciso tener el fichero ESRI shapefile, previamente descargado de la plataforma MOOC, ***clasificacion***. Este fichero contiene el **esquema de clasificación**, que servirá para realizar la clasificación. Las clases temáticas definidas son: **Forestal, Matorral, Cultivos y Otros**. 
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Clasificacion.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Clasificacion.png) 
 
 Será necesario también tener instalada la librería [**Mapview**](https://cran.r-project.org/web/packages/mapview/mapview.pdf) que permite crear visualizaciones interactivas de datos de forma rápida y sencilla sobre una base cartográfica. Con ella, se pueden visualizar los objetos que van a servir de entrenamiento de la clasificación, contenidos en la variable o campo **'CLASE'**, todo ello, sobre un mapa interactivo.
 
@@ -1160,7 +1160,7 @@ mapview(Referencia,zcol="CLASE")
 
 Se puede hacer zoom sobre el mapa para visualizar las distintas zonas de entrenamiento. También es posible cambiar el mapa base para utilizar la colección de imágenes a nivel mundial que proporciona ESRI. 
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Clasificacion_mapview.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Clasificacion_mapview.png) 
 
 ### 4.1.1. Preparar la fase de entrenamiento
 
@@ -1182,7 +1182,7 @@ puntos.ref<-st_join(puntos.ref,Referencia)
 mapview(Referencia,zcol="CLASE")+mapview(puntos.ref,alpha=0)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Clasificacion2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Clasificacion2.png) 
 
 En el mapa resultante se pueden observar los puntos, que, tras extraer el valor del píxel en el que se sitúen, serán las áreas de entrenamiento.  
 
@@ -1279,7 +1279,7 @@ legend("topleft", legend=rownames(perfiles),
        cex=0.75, y.intersp = 0.75, col=miscolores, lty = 1, lwd =3, bty = "n",)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Firma_espectral.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Firma_espectral.png) 
 
 El gráfico anterior muestra la firma espectral de cada clase se acuerdo a las áreas de entrenamiento. ¿Os parece que su forma se asemeja a la realidad?
 
@@ -1310,7 +1310,7 @@ sm.density.compare(valores.pixeles$B7,valores.pixeles$clase,xlab="B7",
 par(mfrow=c(1,1))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Firma_espectral2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Firma_espectral2.png) 
 
 Fijándose bien, es posible discernir que la clase *cultivos* tiene una distribución bimodal en todas las bandas. Es posible que se deba a la diferencia en la zona de estudio entre cultivos en regadío y cultivos en secano.  
 
@@ -1348,7 +1348,7 @@ legend("topright",cex=0.65, y.intersp = 0.55,x.intersp = 0.5,
        inset=c(0,0))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Clas_max_prob.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Clas_max_prob.png) 
 
 #### 4.2.2 Clasificación supervisada por el método de random forest
 
@@ -1370,7 +1370,7 @@ legend("topright",cex=0.65, y.intersp = 0.55,x.intersp = 0.5,
        inset=c(0,0))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Clas_RF.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Clas_RF.png) 
 
 #### 4.2.3 Guardar clasificación generada.
 
@@ -1617,7 +1617,7 @@ dNBR <- (NBR_pre) - (NBR_post)
 plot(dNBR, main="dNBR")
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/dNBR.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/dNBR.png) 
 
 ## 5.3. Clasificación del mapa dNBR en niveles de severidad
 
@@ -1692,7 +1692,7 @@ plot(dNBR_umb, col = mis_colores,
      main = 'dNBR umbralizado')
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/dNBR_umbralizado.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/dNBR_umbralizado.png) 
 
 ```r
 # Visualizar el mapa sin ejes y con la leyenda creada
@@ -1701,7 +1701,7 @@ plot(dNBR_umb, col = mis_colores,legend=FALSE,box=FALSE,axes=FALSE,
 legend("topright", inset=0.05, legend =rev(leyenda), fill = rev(mis_colores), cex=0.5) 
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/dNBR_umbralizado2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/dNBR_umbralizado2.png) 
 
 ## 5.5.  Estimar el perímetro del incendio
 
@@ -1709,7 +1709,7 @@ El índice dNBR puede ser una herramienta poderosa para identificar píxeles que
 
 Una **máscara** consiste en una capa ráster que contiene píxeles que no se utilizarán en el análisis y, por tanto, tienen asignado un **valor NA**. Así conseguimos que estos píxeles no participen en los resultados.
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Mascara.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Mascara.png) 
 
 #### Obtención de la 1ª máscara: zonas con vegetación activa previa al fuego
 
@@ -1741,7 +1741,7 @@ mascara.NDVI <- reclassify(NDVI_pre,
 plot(mascara.NDVI,col="red",legend=FALSE, main="Máscara vegetación activa")
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Mascara_NDVI.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Mascara_NDVI.png) 
 
 En la imagen anterior se observa el efecto de esta máscara, coloreando en rojo las zonas con vegetación. Ahora, se va a aplicar la función *mask*, empleanto esta máscara y la imagen ráster umbralizada. Se observa como ahora aparecen en blanco, sin valor, aquellas zonas en las que el NDVI era inferior a 0.2, evitando así errores de interpretación. 
 
@@ -1754,7 +1754,7 @@ plot(dNBR.mascara.1,col = mis_colores, main = 'Severidad del incendio en zonas c
 legend("topright", inset=0.05, legend =rev(leyenda), fill = rev(mis_colores), cex=0.5) 
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Mascara_NDVI2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Mascara_NDVI2.png) 
 
 #### Obtención de la 2ª máscara: clasificación forestal
 
@@ -1781,7 +1781,7 @@ legend("topright",inset=0.03, cex=0.65, y.intersp = 1.2, x.intersp = 1.2,
        legend=leyenda.clas, fill=mis_colores2, title="Leyenda")
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Clas_RF2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Clas_RF2.png) 
 
 Las zonas en las que existen cultivos y "otros" en el área de estudio, en color verde y amarillo, son las que se van a "enmascarar" en el siguiente paso para que no afecten al resultado del análisis de severidad del incendio.
 
@@ -1796,7 +1796,7 @@ mascara.Clas.RF <- reclassify(Clas_RF,
 plot(mascara.Clas.RF,col="red",legend=FALSE, main="Máscara por tipos de vegetación")
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Mascara_Clas_RF.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Mascara_Clas_RF.png) 
 
 ```r
 #Aplicar la máscara al índice dNBR umbralizado y ya enmascarado por vegetación activa
@@ -1807,7 +1807,7 @@ plot(dNBR.mascara.2,col = mis_colores, legend=FALSE, main="Severidad del incendi
 legend("topright", inset=0.05, legend =rev(leyenda), fill = rev(mis_colores), cex=0.5) 
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Mascara_Clas_RF.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Mascara_Clas_RF.png) 
 
 Este resultado es mucho más fácil de interpretar, ya que solo está aportando información respecto de las zonas forestales y de matorral.
 
@@ -1960,7 +1960,7 @@ dNBR_umb_recort <- ratify(dNBR_umb_recort)
 mapview(dNBR_umb_recort,col.regions=rev(mis_colores3))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Perimetro.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Perimetro.png) 
 
 ```r
 #Gráfico de distribución de grados de severidad del incendio
@@ -1973,7 +1973,7 @@ legend("topright",
        fill=rev(mis_colores3), cex=0.65, y.intersp = 1.2, x.intersp = 1.2)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Perimetro_barplot.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Perimetro_barplot.png) 
 
 Resulta evidente que el grado de severidad del incendio más frecuente es el de "severidad alta" (A).
 
@@ -2030,7 +2030,7 @@ legend("topright",
 text(bp, y=2500, labels=rev(valores_area))
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Perimetro_barplot2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Perimetro_barplot2.png) 
 
 ### 5.8.  Comparar el perímetro del incendio calculado por métodos tradicionales y el estimado a partir de Landsat
 
@@ -2050,7 +2050,7 @@ mapview(perimetro.manual,col.regions="red")+
   mapview(perimetro.def,col.regions="green",burst=TRUE, hide=FALSE)
 ```
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Perimetro2.png) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Perimetro2.png) 
 
 ```r
 #Calcular la superficie
