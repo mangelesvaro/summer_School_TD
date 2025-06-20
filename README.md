@@ -306,8 +306,6 @@ browseURL(url_)
 
 ## 2. Visualización de imágenes
 
-En el presente ejercicio se va a aprender a visualizar y manipular imágenes satelitales, además de a operar con ellas para generar índices de vegetación empleando el lenguaje R. Los datos e imágenes utilizadas en este capítulo son los que se descargaron en el [Capítulo 5 Sensores, acceso y procesado de imágenes](https://github.com/Libro-GEOFOREST/Capitulo5-Sensores_Teledeteccion)  
-
 Primero se va a aprender a visualizar y manejar las imágenes de satélite, intentando comprender la organización interna de las mismas, cómo se configura la estructura de sus datos y la información que aportan del terreno.
 
 #### 2.1. Preparación de los datos en el entorno RStudio Cloud
@@ -481,7 +479,7 @@ hist(b5,main = "Banda 5",breaks=200,xlab = "Valor del pixel")
 hist(b7,main = "Banda 7",breaks=200,xlab = "Valor del pixel")
 ``` 
 
-![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/Auxiliares/Pre_histogramas1.PNG) 
+![](https://github.com/Libro-GEOFOREST/Capitulo6_Tecnicas_clasificacion_Imagenes/blob/main/Auxiliares/Pre_histogramas1.PNG) 
 
 Se esperaba que los valores de reflectancia fluctuaran entre 0 y 1. Sin embargo, se observan valores superiores a 1.5. ¿Qué ha podido pasar?  
 
