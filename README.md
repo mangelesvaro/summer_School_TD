@@ -30,7 +30,7 @@ Para hacer un estudio completo del incendio mediante teledetección es recomenda
 
 Primero, es preciso subir a la nube la capa con los límites de la zona de estudio que se han facilitado a través de la plataforma con el nombre de Limites_AOI. Aunque el archivo está comprimido en formato zip, se deben subir los 4 archivos individuales que describen la capa, los archivos tienen las siguientes extensiones .dbf, .prj, .shp, .shx. Ésto se realiza a través del botón **upload** de la pestaña **Files** en el cuadro inferior derecho. Una vez realizado, se verá así:  
 
-![](https://github.com/mangelesvaro/summer_School_TD/blob/main/Auxiliares/AOI_en_EE.PNG)) 
+![](https://github.com/mangelesvaro/summer_School_TD/blob/main/Auxiliares/AOI_en_EE.PNG)
 
 Ahora se procede a la búsqueda concreta de las imágenes. Puesto que el siniestro ocurrió en el mes de agosto, es razonable pensar que una imagen de primavera del mismo año podría generar el contraste necesario para el análisis del suceso.  Es por ello que se va a emplear el mes de marzo como rango de búsqueda temporal.
 
