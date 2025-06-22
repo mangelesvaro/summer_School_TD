@@ -32,19 +32,6 @@ Primero, es preciso subir a la nube la capa con los límites de la zona de estud
 
 ![](.Auxiliares/AOI_en_EE.PNG) 
 
-Seguidamente, se configura la plataforma para las funciones que se van a emplear.  
-
-
-getSpatialData se encuentra en una etapa inicial de desarrollo. Tiene como objetivo permitir flujos de trabajo homogéneos y reproducibles para consultar, obtener una vista previa, analizar, seleccionar, ordenar y descargar varios tipos de conjuntos de datos espaciales de fuentes abiertas. Permite el acceso genérico a múltiples distribuidores de datos con una sintasis común para 159 productos. Entre otros, getSpatialData admite estos productos: Sentinel-1, Sentinel-2, Sentinel-3, Sentinel-5P, Landsat 8 OLI, Landsat ETM, Landsat TM, Landsat MSS, MODIS (Terra & Aqua) y SRTM DEM. Para ello, getSpatialData facilita el acceso a múltiples servicios implementando clientes a API públicas de ESA Copernicus Open Access Hub, USGS EarthExplorer, USGS EROS ESPA, Amazon Web Services (AWS), NASA DAAC LAADS y NASA CMR search. 
-
-Se puede comprobar que a través de este sistema se puede acceder a diversos productos de satélites como Sentinel-1, Sentinel-2, Sentinel-3, Sentinel-5P, Landsat 8 OLI, Landsat ETM, Landsat TM, Landsat MSS, MODIS (Terra & Aqua) y SRTM DEM.  
-
-Para entender a qué conjunto de datos se refiere cada producto:  
-
-![](./Auxiliares/Landsat_datasets.JPG) 
-
-[Fuente](https://grass.osgeo.org/grass78/manuals/addons/i.landsat.download.html) 
-
 Ahora se procede a la búsqueda concreta de las imágenes. Puesto que el siniestro ocurrió en el mes de agosto, es razonable pensar que una imagen de primavera del mismo año podría generar el contraste necesario para el análisis del suceso.  Es por ello que se va a emplear el mes de marzo como rango de búsqueda temporal.
 
 ![](./Auxiliares/Fechas.PNG) 
